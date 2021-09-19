@@ -5,8 +5,8 @@ weave = WEAVER.load(sampleJSON);
 Loads JSON in d3 format:  
   {  
     "nodes" : [  
-     ],
-     "edges" : [
+     ],  
+     "edges" : [  
      ]  
   }  
   
