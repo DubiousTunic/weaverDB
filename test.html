@@ -1,0 +1,44 @@
+<html>
+	<head>
+		<script src="src/weaver.js"></script>
+	</head>
+	<body>
+
+	</body>
+	<script>
+		//((they)) are attacking me so i lose reputation...it's not about magick
+		//or anything like this...they simply don't want me to gain reputation
+		//from writing vanilla js
+
+		var phant = {
+			"nodes" : [
+				{
+					"gay" : 1,
+					"homo" : 0
+				},
+				{
+					"gay" : 1,
+					"homo" : 1
+				}
+			],
+			"edges" : [
+				{
+
+				}
+			]
+		}
+
+	
+		//console.log(Object.prototype.toString.call(phant.nodes) === '[object Array]')
+
+		//returns an array of nodes matching criteria
+		//sets the node of the non-homo to homo : 1
+		var db = WEAVER.load(phant);
+		db.getNodes({"homo" : 0}).setNodes({"homo" : 1})
+		db.getNodes().pointer();
+		db.getEdges().pointer();
+		db.db();
+		//esch
+		console.log(db);
+	</script>
+</html>
