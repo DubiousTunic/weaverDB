@@ -12,7 +12,7 @@ Loads JSON in d3 format:
   
 var fromParams = {
   "name" : "Freud",  
-  "occupation" : "psychologist
+  "occupation" : "psychologist"  
 }  
   
 weave.getNodes(fromParams) //returns arr of nodes matching params  
