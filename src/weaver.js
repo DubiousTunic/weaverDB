@@ -42,6 +42,8 @@ var WEAVER = {
 		params : object of params to set
 	*/
 	setNodes : function(params){
+		if(!params)
+			return this;
 		console.log(params);
 		var that = this;
 		this._pointer.map(function(node) {
@@ -52,6 +54,8 @@ var WEAVER = {
 	}
 	,
 	setEdges : function(params){
+		if(!params)
+			return this;
 		console.log(params);
 		var that = this;
 		this._pointer.map(function(edge) {
@@ -90,7 +94,15 @@ var WEAVER = {
 		return this;
 	}
 	,
-	pointer : function(){
+	first : function(){
+		return this._pointer[0]
+	}
+	,
+	last : function(){
+		return this._pointer[pointer.length - 1]
+	}
+	,
+	toArray : function(){
 		return this._pointer;
 	}
 	,
@@ -99,22 +111,45 @@ var WEAVER = {
 	}
 	,
 	addNode : function(node){
-		db.nodes.push(node)
+		if(!node)
+			return this;
+		this._db.nodes.push(node)
 	}
 	,
 	addEdge : function(edge){
-		db.edges.push(edge);
+		if(!edge)
+			return this;
+		this._db.edges.push(edge);
 	}
 	,
-	deleteNode : function(){
-
+	deleteNode : function(props){
+		if(!props){
+			this._pointer = this._db.nodes;
+			return this;
+		}
+		var that = this;
+		this._pointer = this._db.nodes.filter(function(e) {
+		  return Object.keys(props).every(function(a) {
+		  	that._db.nodes.splice(e._id, 1);
+		    return !Object.values(props).includes(e[a])		    
+		  })
+		})
+		return this;
 	}
 	,
-	deleteEdge : function(){
-
+	deleteEdge : function(edge){
+		if(!props){
+			this._pointer = this._db.edges;
+			return this;
+		}
+		var that = this;
+		this._pointer = this._db.edges.filter(function(e) {
+		  return Object.keys(props).every(function(a) {
+		  	that._db.edges.splice(e._id, 1);
+		    return !Object.values(props).includes(e[a])		    
+		  })
+		})
+		return this;
 	}
-}
-
-function lance(){
-
+	//TODO: basic query language
 }
