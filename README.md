@@ -1,4 +1,4 @@
-# weaverDB
+# reaverDB
 Simple clientside graph db module, compatible as model with <a href="https://github.com/DubiousTunic/ANCHORED-Router">ANCHOR3D</a> as view
   
 weave = WEAVER.load(sampleJSON);   
