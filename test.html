@@ -6,39 +6,30 @@
 
 	</body>
 	<script>
-		//((they)) are attacking me so i lose reputation...it's not about magick
-		//or anything like this...they simply don't want me to gain reputation
-		//from writing vanilla js
-
-		var phant = {
+		var myJSON = {
 			"nodes" : [
 				{
-					"gay" : 1,
-					"homo" : 0
+					"psychologist" : "Freud",
+					"teaching" : "Libido"
 				},
 				{
-					"gay" : 1,
-					"homo" : 1
+					"psychologist" : "Jung",
+					"teaching" : "MBTI"
 				}
 			],
 			"edges" : [
 				{
-
+					"head" : 0,
+					"tail" : 1
 				}
 			]
 		}
 
-	
-		//console.log(Object.prototype.toString.call(phant.nodes) === '[object Array]')
-
-		//returns an array of nodes matching criteria
-		//sets the node of the non-homo to homo : 1
-		var db = WEAVER.load(phant);
-		db.getNodes({"homo" : 0}).setNodes({"homo" : 1})
-		db.getNodes().pointer();
-		db.getEdges().pointer();
-		db.db();
-		//esch
-		console.log(db);
+		var weave = WEAVER.load(myJSON);
+		weave.getNodes({"psychologist" : "Freud"}).setNodes({"teaching" : "Iceberg"})
+		var node = weave.getNodes().first();
+		weave.deleteNode(node);
+		//esch^2
+		console.log(weave.db());
 	</script>
 </html>
