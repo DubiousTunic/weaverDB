@@ -1,5 +1,5 @@
 # reaverDB
-Simple clientside graph db module, compatible as model with <a href="https://github.com/DubiousTunic/ANCHORED-Router">ANCHOR3D</a> as view
+Simple clientside graph db module, compatible as model with <a href="https://github.com/DubiousTunic/ANCHOR-router">ANCHOR</a> as view
   
 weave = WEAVER.load(sampleJSON);   
 Loads JSON in d3 format:  
