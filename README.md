@@ -25,4 +25,4 @@ weave.addNode({"name" : "Nietzsche", "occupation" : "psychologist"})
   
 weave.db(); //returns entire db of nodes and edges  
   
-New Atlantis gear module
+New Atlantis gear module not production ready
