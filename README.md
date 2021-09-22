@@ -1,7 +1,7 @@
-# reaperDB
+# weaverDB
 Simple clientside graph db module, compatible as model with <a href="https://github.com/DubiousTunic/ANCHOR-router">ANCHOR</a> as view
   
-var reap = REAPER.load(sampleJSON);   
+var weave = WEAVER.load(sampleJSON);   
 Loads JSON in d3 format:  
   {  
     "nodes" : [  
@@ -15,14 +15,14 @@ var fromParams = {
   "occupation" : "psychologist"  
 }  
   
-reap.getNodes(fromParams) //returns arr of nodes matching params  
-reap.getNodes(fromParams).first() //returns first node matching params  
-reap.getNodes(fromParams).setNodes({  
+weave.getNodes(fromParams) //returns arr of nodes matching params  
+weave.getNodes(fromParams).first() //returns first node matching params  
+weave.getNodes(fromParams).setNodes({  
   "occupation" : "psychiatrist"  
 })  
   
-reap.addNode({"name" : "Nietzsche", "occupation" : "psychologist"})  
+weave.addNode({"name" : "Nietzsche", "occupation" : "psychologist"})  
   
-reap.db(); //returns entire db of nodes and edges  
+weave.db(); //returns entire db of nodes and edges  
   
 New Atlantis gear module
